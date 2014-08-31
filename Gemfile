@@ -41,6 +41,9 @@ gem 'therubyracer'
 
 gem 'rails4-autocomplete'
 
+# to search and scrap linkedin profiles
+gem 'linkedin-scraper'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

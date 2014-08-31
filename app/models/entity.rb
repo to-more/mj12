@@ -22,7 +22,9 @@ class Entity
   end
 
   def add_meta( key, value, override = true )
+    
     added = false
+    
     self.meta.each do |meta|
       if meta.key == key
         if meta.value == value 
@@ -33,12 +35,15 @@ class Entity
         end
       end
     end
-    if ! added 
+    
+    unless added 
       meta = Metum.new
       meta.key = key
       meta.value = value
       self.meta.push(meta)
     end
-    self.save()
+    
+    self.save
+
   end
 end

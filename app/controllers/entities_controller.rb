@@ -96,7 +96,9 @@ class EntitiesController < ApplicationController
       if link.meta.length > 0 
         @son['links'].push( {source: @indexs[link.ent_a.id.hash.abs], target: @indexs[link.ent_b.id.hash.abs], meta: Metum.for_export(link.meta)} )
       else
-        @son['links'].push( {source: @indexs[link.ent_a.id.hash.abs], target: @indexs[link.ent_b.id.hash.abs]} )
+        if link.ent_a && link.ent_b
+          @son['links'].push( {source: @indexs[link.ent_a.id.hash.abs], target: @indexs[link.ent_b.id.hash.abs]} )
+        end
       end
     end
 

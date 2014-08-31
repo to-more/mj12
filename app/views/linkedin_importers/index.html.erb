@@ -1,0 +1,25 @@
+<h1>Listing linkedin_importers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @linkedin_importers.each do |linkedin_importer| %>
+      <tr>
+        <td><%= link_to 'Show', linkedin_importer %></td>
+        <td><%= link_to 'Edit', edit_linkedin_importer_path(linkedin_importer) %></td>
+        <td><%= link_to 'Destroy', linkedin_importer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Linkedin importer', new_linkedin_importer_path %>

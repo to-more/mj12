@@ -1,0 +1,31 @@
+<div class="container">
+  <%= form_for @linkedin_importer, url:{action:"import_from_linkedin"}, html: { class: "form-signin"} do |f| %>
+    <% if @linkedin_importer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@linkedin_importer.errors.count, "error") %> prohibited this linkedin_importer from being saved:</h2>
+
+        <ul>
+        <% @linkedin_importer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field entity">
+      <%= f.text_field :idProfile, placeholder:"ID Linkedin Profile", class: 'form-control'%>
+    </div>
+
+    <div class="field entity">
+      <%= f.text_field :profile, placeholder:"Linkedin Profile", class: 'form-control'%>
+    </div>
+
+    <div class="field entity">
+      <%= f.text_field :url, placeholder:"Url Linkedin Profile", class: 'form-control'%>
+    </div>
+
+    <div>
+      <%= f.submit  "Search Linkedin profile", class: "btn btn-lg btn-primary btn-block" %>
+    </div>
+  <% end %>
+</div>

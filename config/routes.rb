@@ -1,9 +1,14 @@
 Mapa::Application.routes.draw do
 
+  resources :linkedin_importers
+
   get "welcome/index"
 
   get "map.json" => 'entities#map'
   get "import" => 'entities#import'
+
+  post "import_from_linkedin" => 'linkedin_importers#import_from_linkedin'
+
   post "import" => 'entities#doimport'
 
   resources :links do
